@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Flashcard Component Demo</title>
+  <style>
+    .flashcard-container{ perspective:1000px; width:360px; margin:40px auto; }
+    .flashcard{ width:100%; height:220px; position:relative; transform-style:preserve-3d; transition: transform 0.6s; }
+    .flashcard.flipped{ transform: rotateY(180deg); }
+    .card-face, .card-back{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; display:flex; align-items:center; justify-content:center; padding:20px; border-radius:12px; box-shadow:0 10px 30px rgba(2,6,23,0.12); background:#fff; color:#0b1220 }
+    .card-back{ transform: rotateY(180deg); background: linear-gradient(180deg,#f7fbff,#e8f1ff); }
+    .card-title{ font-weight:700; font-size:18px; margin-bottom:8px }
+    .card-body{ font-size:15px; color:#334155; }
+    .fc-controls{ display:flex; gap:8px; justify-content:center; margin-top:12px }
+    .small-btn{ padding:8px 12px; border-radius:8px; cursor:pointer; border:1px solid rgba(0,0,0,0.06); background:#fff }
+  </style>
+</head>
+<body>
+  <div style="max-width:780px;margin:20px auto;text-align:center">
+    <h2>Flashcard Component Demo</h2>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+      <input id="query-input" placeholder="Enter topic" style="padding:10px;border-radius:8px;border:1px solid #ddd;width:260px" />
+      <button id="fetch-btn" class="small-btn">Fetch & Show</button>
+    </div>
+
+    <div class="flashcard-container" style="margin-top:18px">
+      <div id="flashcard" class="flashcard">
+        <div class="card-face">
+          <div>
+            <div class="card-title">Simple Explanation</div>
+            <div id="simple-text" class="card-body">Click "Fetch & Show" to load a simple explanation.</div>
+          </div>
+        </div>
+        <div class="card-back">
+          <div>
+            <div class="card-title">Detailed Explanation</div>
+            <div id="detailed-text" class="card-body">Detailed explanation will appear here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fc-controls">
+      <button id="flip-btn" class="small-btn">Flip Card</button>
+      <button id="show-front" class="small-btn">Show Front</button>
+    </div>
+  </div>
+
+  <script>
+    const cardEl = document.getElementById('flashcard');
+    const flipBtn = document.getElementById('flip-btn');
+    const showFrontBtn = document.getElementById('show-front');
+    function toggleCard(){ cardEl.classList.toggle('flipped'); }
+    flipBtn.addEventListener('click', toggleCard);
+    showFrontBtn.addEventListener('click', ()=>cardEl.classList.remove('flipped'));
+
+    async function fetchAndDisplay(query){
+      const simpleEl = document.getElementById('simple-text');
+      const detailedEl = document.getElementById('detailed-text');
+      simpleEl.textContent = 'Loading…'; detailedEl.textContent = 'Loading…';
+      try{
+        const res = await fetch('/api/search', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ query }) });
+        if(!res.ok){ const err = await res.json().catch(()=>null); simpleEl.textContent = 'Error'; detailedEl.textContent=''; return; }
+        const j = await res.json();
+        simpleEl.textContent = j.simple_explanation || j.simple || '—';
+        detailedEl.textContent = j.detailed_explanation || j.detailed || j.detailed_explanation || '—';
+        // ensure front is visible
+        cardEl.classList.remove('flipped');
+      }catch(e){ simpleEl.textContent = 'Network error'; detailedEl.textContent = String(e && e.message); }
+    }
+
+    document.getElementById('fetch-btn').addEventListener('click', ()=>{
+      const q = document.getElementById('query-input').value.trim();
+      if(!q) return alert('Enter a topic');
+      fetchAndDisplay(q);
+    });
+  </script>
+</body>
+</html>

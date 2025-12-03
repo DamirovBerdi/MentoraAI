@@ -1,0 +1,13 @@
+node_modules/
+Backend/node_modules/
+Frontent/node_modules/
+*.log
+.env
+Backend/.env
+uploads/
+*.sqlite3
+*.db
+.vscode/
+.DS_Store
+npm-debug.log*
+coverage/

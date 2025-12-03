@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="profile">Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./animated-bg.css">
+</head>
+<body>
+<div id="animated-bg"><div class="blob b1"></div><div class="blob b2"></div></div>
+<header>
+  <div class="logo-section">
+    <h2 class="logo" data-i18n="logo">MentoraAI</h2>
+  </div>
+  <nav>
+    <a href="index.html" class="nav-btn" data-i18n-html="home">🏠 Home</a>
+    <a href="settings.html" class="nav-btn" data-i18n-html="settings">⚙️ Settings</a>
+  </nav>
+</header>
+
+<main style="padding:24px; max-width:720px; margin:24px auto; text-align:left;">
+  <h3 data-i18n-html="profile">👤 Profile</h3>
+
+  <section id="auth-status" style="margin-bottom:18px;"> </section>
+
+  <section id="auth-actions">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;align-items:start;">
+      <div style="border-radius:14px;padding:18px;background:linear-gradient(180deg,#ffffff,#fbfbff);box-shadow:0 8px 20px rgba(12, 40, 80, 0.06);border:1px solid rgba(20,20,40,0.04);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#6b8cff,#8a6bff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">SI</div><div><h3 style="margin:0;font-size:1.05rem">Sign In</h3><div style="font-size:12px;color:#666">Access your Mentora account</div></div></div>
+        <div style="margin-top:6px;margin-bottom:10px;"><input id="signin-username" placeholder="Username" style="width:100%;padding:10px;border-radius:10px;border:1px solid #e6e6e6"></div>
+        <div style="margin-bottom:12px;"><input id="signin-password" type="password" placeholder="Password" style="width:100%;padding:10px;border-radius:10px;border:1px solid #e6e6e6"></div>
+        <div style="display:flex;gap:10px;margin-bottom:12px;"><button id="signin-submit" class="nav-btn" style="flex:1;background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff;border:none;padding:10px 14px;border-radius:10px;">Sign In</button><button id="signin-guest" class="nav-btn" style="flex:0 0 auto;background:#f3f3f3;color:#333;border-radius:10px;padding:10px 12px;border:1px solid #e9e9f0;">Guest</button></div>
+        <div style="text-align:center;margin:6px 0;color:#888;font-size:13px;">or</div>
+        <div style="text-align:center;"><button id="signin-google" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #e6e6e9;background:#fff;cursor:pointer;"> <img src="https://www.google.com/favicon.ico" style="width:18px;height:18px;"> Sign in with Google</button></div>
+      </div>
+
+      <div style="border-radius:14px;padding:18px;background:linear-gradient(180deg,#ffffff,#fbfbff);box-shadow:0 8px 20px rgba(12, 40, 80, 0.06);border:1px solid rgba(20,20,40,0.04);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#06b6d4,#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">SU</div><div><h3 style="margin:0;font-size:1.05rem">Sign Up</h3><div style="font-size:12px;color:#666">Create your free Mentora account</div></div></div>
+        <div style="margin-top:6px;margin-bottom:8px;"><input id="signup-username" placeholder="Choose a username" style="width:100%;padding:10px;border-radius:10px;border:1px solid #e6e6e6"></div>
+        <div style="margin-bottom:8px;"><input id="signup-password" type="password" placeholder="Create password" style="width:100%;padding:10px;border-radius:10px;border:1px solid #e6e6e6"></div>
+        <div style="margin-bottom:12px;"><input id="signup-confirm" type="password" placeholder="Repeat password" style="width:100%;padding:10px;border-radius:10px;border:1px solid #e6e6e6"></div>
+        <div style="display:flex;gap:10px;margin-bottom:12px;"><button id="signup-submit" class="nav-btn" style="flex:1;background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#fff;border:none;padding:10px 14px;border-radius:10px;">Create account</button><button id="signup-cancel" class="nav-btn" style="flex:0 0 auto;background:#f3f3f3;color:#333;border-radius:10px;padding:10px 12px;border:1px solid #e9e9f0;">Reset</button></div>
+        <div style="text-align:center;margin:6px 0;color:#888;font-size:13px;">or</div>
+        <div style="text-align:center;"><button id="signup-google" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #e6e6e9;background:#fff;cursor:pointer;"><img src="https://www.google.com/favicon.ico" style="width:18px;height:18px;"> Sign up with Google</button></div>
+        <div style="margin-top:10px;font-size:12px;color:#666;">Username: 3–30 characters; letters, numbers, _ . - allowed. Password minimum 6 characters.</div>
+      </div>
+    </div>
+
+    <div id="change-password" style="margin-top:18px;">
+      <h4 data-i18n-html="change_password">Change password</h4>
+        <!-- toggle button to reveal change password form -->
+        <div style="margin:8px 0;">
+          <button id="forgot-toggle" class="forgot-link" data-i18n="forgot_password">Forgot password?</button>
+        </div>
+        <div id="change-form" style="display:none;">
+        <div style="margin-bottom:8px;"><label data-i18n="old_password_label">Old password</label><br><input type="password" id="old-password" placeholder="Enter old password" data-i18n="old_password_placeholder" style="width:100%; padding:8px; border-radius:6px;"></div>
+        <div style="margin-bottom:8px;"><label data-i18n="new_password_label">New password</label><br><input type="password" id="new-password" placeholder="Enter new password" data-i18n="new_password_placeholder" style="width:100%; padding:8px; border-radius:6px;"></div>
+        <div style="margin-bottom:8px;"><label data-i18n="confirm_password_label">Confirm password</label><br><input type="password" id="confirm-password" placeholder="Confirm new password" data-i18n="confirm_password_placeholder" style="width:100%; padding:8px; border-radius:6px;"></div>
+        <button id="btn-change" class="nav-btn" data-i18n-html="change_password">Change</button>
+      </div>
+    </div>
+
+    <div id="message" style="margin-top:12px;color:green;"></div>
+  </section>
+</main>
+
+<script src="i18n.js"></script>
+<script src="auth.js"></script>
+<script src="profile.js"></script>
+<script src="./animated-bg.js"></script>
+</body>
+</html>

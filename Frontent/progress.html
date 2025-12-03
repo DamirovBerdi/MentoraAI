@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Progress - MentoraAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="display:flex;justify-content:space-between;align-items:center;padding:18px;">
+    <h2>Progress</h2>
+    <nav class="history-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="games.html" class="nav-link">Games</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1000px;margin:20px auto;padding:12px">
+    <section class="card progress-stats" style="display:flex;gap:12px;align-items:center;justify-content:space-around;padding:18px">
+      <div>
+        <div style="font-size:20px;font-weight:700" id="total-games">0</div>
+        <div class="meta">Games played</div>
+      </div>
+      <div>
+        <div style="font-size:20px;font-weight:700" id="avg-score">0</div>
+        <div class="meta">Average score</div>
+      </div>
+      <div>
+        <div style="font-size:20px;font-weight:700" id="flashcards-count">0</div>
+        <div class="meta">Flashcards</div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>Recent games</h3>
+      <div id="recent-games" class="game-row"></div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>Flashcards to review</h3>
+      <div id="review-cards" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+    </section>
+  </main>
+
+  <script src="progress.js"></script>
+</body>
+</html>

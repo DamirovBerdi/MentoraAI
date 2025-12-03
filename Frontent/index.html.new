@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentora - Smart AI Learning</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo-section">
+    <h2 class="logo" data-i18n="logo">MentoraAI</h2>
+    <!-- use relative image path from this folder -->
+    <img src="photo_2025-11-27_15-42-14.jpg" class="profile-image" alt="User">
+  </div>
+  <nav>
+    <a href="settings.html" class="nav-btn" data-i18n-html="settings">⚙️ Settings</a>
+    <a href="#" class="nav-btn" data-i18n-html="profile">👤 Profile</a>
+  </nav>
+</header>
+
+<!-- Search Section -->
+<section class="hero">
+  <input type="text" placeholder="Search topics..." class="search-box" data-i18n="search_placeholder">
+</section>
+
+<!-- Feature Buttons (link to other pages) -->
+<section class="sections-row">
+  <a class="feature-box" href="history.html" data-i18n-html="history">📜 History</a>
+  <a class="feature-box" href="flashcard.html" data-i18n-html="flashcards">🗂️ Flashcards</a>
+  <a class="feature-box" href="game.html" data-i18n-html="game">🎮 Game</a>
+  <a class="feature-box" href="progress.html" data-i18n-html="progress">📈 Progress</a>
+</section>
+
+<!-- notes: места для рекламы/партнёров/описания премиума - оставить для дизайна -->
+
+<script src="i18n.js"></script>
+<script src="scypt.js"></script>
+</body>
+</html>

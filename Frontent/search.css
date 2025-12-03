@@ -1,0 +1,28 @@
+/* Simple modern search UI styles for MentoraAI */
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:#f6f7fb;color:#0f172a}
+.container{max-width:960px;margin:28px auto;padding:20px}
+.search-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(12,40,80,0.06);border:1px solid rgba(20,20,40,0.04)}
+.search-row{display:flex;gap:12px}
+.search-box{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #e6e6e9;font-size:16px}
+.search-btn{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff;border:none;cursor:pointer}
+.results{margin-top:18px}
+.loading{display:flex;align-items:center;gap:10px;color:#6b7280}
+.spinner{width:20px;height:20px;border-radius:50%;border:3px solid rgba(0,0,0,0.08);border-top-color:#4f46e5;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.card{background:#fff;border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid rgba(20,20,40,0.03);box-shadow:0 6px 18px rgba(12,40,80,0.04)}
+.keypoints{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.kp{background:#f8fafc;padding:8px;border-radius:8px;border:1px solid rgba(10,20,40,0.03)}
+.actions{display:flex;gap:8px;margin-top:12px}
+.action-btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:#fff;cursor:pointer}
+@media(max-width:720px){.search-row{flex-direction:column}.search-btn{width:100%}}
+
+/* flip card styles */
+.flashcards-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.flip-card{width:160px;height:110px;perspective:1000px}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:10px;box-shadow:0 6px 18px rgba(12,40,80,0.06);display:flex;flex-direction:column;justify-content:center}
+.flip-card-front{background:linear-gradient(90deg,#ffffff,#f8fafc);color:#0f172a}
+.flip-card-back{background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#fff;transform:rotateY(180deg)}
+.flashcard-title{font-weight:700;font-size:14px;margin-bottom:6px}
+.flashcard-body{font-size:12px;overflow:hidden;text-overflow:ellipsis}

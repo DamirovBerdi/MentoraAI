@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MentoraAI - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+<header>
+  <h2 data-i18n-html="settings_header">⚙️ Settings</h2>
+  <nav>
+    <a href="index.html" class="nav-btn" data-i18n-html="home">🏠 Home</a>
+  </nav>
+</header>
+
+<section class="settings">
+
+  <div class="setting-item">
+    <span data-i18n="dark_mode">Dark Mode</span>
+    <label class="switch">
+      <input type="checkbox" id="darkMode">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div class="setting-item">
+    <span data-i18n="language_label">Language</span>
+    <select id="language">
+      <option value="uz">O‘zbek</option>
+      <option value="en">English</option>
+      <option value="ru">Русский</option>
+    </select>
+  </div>
+
+  <div class="setting-item">
+    <span data-i18n="notifications">Notifications</span>
+    <label class="switch">
+      <input type="checkbox" id="notifications">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+</section>
+
+<script src="i18n.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>

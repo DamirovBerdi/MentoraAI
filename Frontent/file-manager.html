@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>File Manager</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:20px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid #ddd;padding:8px}
+    th{background:#f4f4f4}
+  </style>
+</head>
+<body>
+  <h1>Файловый менеджер</h1>
+  <form id="uploadForm">
+    <input type="file" name="file" id="fileInput" />
+    <button>Загрузить</button>
+  </form>
+  <h2>Файлы</h2>
+  <table id="filesTable">
+    <thead><tr><th>Имя</th><th>Размер (байт)</th><th>Действия</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <script src="/file-manager.js"></script>
+</body>
+</html>

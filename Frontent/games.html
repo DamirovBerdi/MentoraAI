@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Games - MentoraAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header style="display:flex;justify-content:space-between;align-items:center;padding:18px;">
+    <div style="display:flex;align-items:center;gap:12px"><h2 style="margin:0">Games</h2><span style="color:#6b7280">Play & track your progress</span></div>
+    <nav class="history-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="profile.html" class="nav-link">Profile</a>
+      <a href="progress.html" class="nav-link">Progress</a>
+    </nav>
+  </header>
+  <main style="max-width:900px;margin:18px auto;padding:12px">
+    <section class="card" style="margin-bottom:18px;">
+      <h3>Start a new game</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center">
+        <input id="game-topic" placeholder="Enter topic or search term (e.g. Newton)" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6e6e9">
+        <input id="game-date" type="date" style="padding:8px;border-radius:8px;border:1px solid #e6e6e9">
+        <select id="game-type" style="padding:8px;border-radius:8px;border:1px solid #e6e6e9">
+          <option value="quick">Quick test (10 questions)</option>
+          <option value="write">Write answers (10 questions)</option>
+        </select>
+        <button id="start-game" class="small-btn">Create</button>
+      </div>
+      <div id="start-status" style="margin-top:8px;color:#666"></div>
+      <div style="margin-top:12px;color:#495057;font-size:14px">Tip: create a game to save questions by topic and date. Then open it from the list to play or review.</div>
+    </section>
+
+    <section>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3>Your saved games</h3>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="filter-topic" placeholder="Filter by topic" style="padding:8px;border-radius:8px;border:1px solid #e6e6e9">
+          <button id="btn-refresh" class="small-btn">Refresh</button>
+        </div>
+      </div>
+      <div id="games-list" class="game-row" style="margin-top:8px"></div>
+    </section>
+  </main>
+
+  <script src="games.js"></script>
+  <!-- Play modal -->
+  <div id="play-modal" class="modal" style="display:none">
+    <div class="modal-inner">
+      <button id="play-close" class="small-btn" style="float:right">Close</button>
+      <div id="play-header" style="margin-bottom:8px"></div>
+      <div id="play-body">
+        <div id="play-question" style="font-weight:700;margin-bottom:8px"></div>
+        <textarea id="play-answer" placeholder="Type your answer here" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e9"></textarea>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div id="play-progress" class="meta">0 / 0</div>
+          <div>
+            <button id="play-prev" class="small-btn">Prev</button>
+            <button id="play-next" class="small-btn">Next</button>
+            <button id="play-finish" class="small-btn">Finish</button>
+          </div>
+        </div>
+      </div>
+      <div id="play-footer" style="margin-top:12px;color:#556;font-size:13px"></div>
+    </div>
+  </div>
+</body>
+</html>

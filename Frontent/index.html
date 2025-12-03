@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentora - Smart AI Learning</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="./animated-bg.css"/>
+</head>
+
+<body>
+
+
+<!-- Header -->
+<header>
+  <div class="logo-section">
+    <h2 class="logo" data-i18n="logo">MentoraAI</h2>
+    <!-- use relative image path from this folder -->
+    <img src="photo_2025-11-27_15-42-14.jpg" class="profile-image" alt="User">
+  </div>
+  <nav>
+    <a href="settings.html" class="nav-btn" data-i18n-html="settings">⚙️ Settings</a>
+    <a href="profile.html" class="nav-btn" data-i18n-html="profile">👤 Profile</a>
+    <!-- Login menu removed: authentication lives on Profile page -->
+  </nav>
+</header>
+
+<!-- Search Section -->
+<section class="hero">
+  <h1 style="margin:0;font-size:40px;" data-i18n="hero_title">Learn with MentoraAI</h1>
+  <p style="margin:8px 0 18px;color:#6b7280;" data-i18n="hero_sub">Any topic, question or concept you want to learn</p>
+  <input type="text" placeholder="Search topics..." class="search-box" data-i18n="search_placeholder">
+</section>
+
+<!-- AI Search Results -->
+<section id="search-results" style="padding:16px;">
+  <div id="search-results"></div>
+</section>
+
+<!-- Feature Buttons (link to other pages) -->
+<section class="sections-row">
+  <a class="feature-box" href="history.html" data-i18n-html="history">📜 History</a>
+  <a class="feature-box" href="flashcard.html" data-i18n-html="flashcards">🗂️ Flashcards</a>
+  <a class="feature-box" href="game.html" data-i18n-html="game">🎮 Game</a>
+  <a class="feature-box" href="progress.html" data-i18n-html="progress">📈 Progress</a>
+</section>
+
+<!-- Plans / Subscriptions -->
+<section style="max-width:1000px;margin:22px auto;padding:12px">
+  <h2 style="margin-bottom:8px" data-i18n="subscription_header">Subscription plans</h2>
+  <p style="color:#6b7280;margin-top:0;margin-bottom:12px" data-i18n="subscription_desc">Choose a plan that fits your learning pace. Icons show plan level.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <!-- Standard -->
+    <div class="plan-card">
+      <div class="plan-icon">🔰</div>
+      <div class="plan-title" data-i18n="plan_standard">Standard</div>
+      <div class="plan-sub" data-i18n-html="plan_daily_standard">Daily limit: <strong>20</strong></div>
+      <div class="plan-cta"><button class="small-btn" data-i18n="plan_select">Select</button></div>
+    </div>
+    <!-- Pro -->
+    <div class="plan-card plan-pro">
+      <div class="plan-icon">⚡</div>
+      <div class="plan-title" data-i18n="plan_pro">Pro</div>
+      <div class="plan-sub" data-i18n-html="plan_daily_pro">Daily limit: <strong>100</strong></div>
+      <div class="plan-cta"><button class="small-btn" data-i18n="plan_select">Select</button></div>
+    </div>
+    <!-- Premium -->
+    <div class="plan-card plan-premium">
+      <div class="plan-icon">🏆</div>
+      <div class="plan-title" data-i18n="plan_premium">Premium</div>
+      <div class="plan-sub" data-i18n-html="plan_daily_premium">Daily limit: <strong>Unlimited</strong></div>
+      <div class="plan-cta"><button class="small-btn" data-i18n="plan_select">Select</button></div>
+    </div>
+  </div>
+
+  <!-- Under plans: three empty banners/placeholders as requested -->
+  <div class="ad-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px">
+    <a href="#" class="ad-banner" data-ad="1" aria-label="Advertisement 1">
+      <div class="ad-media" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#eef2ff"/><path d="M6 12h12" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 16h8" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ad-info">
+        <div class="ad-sponsored" data-i18n="ad_sponsored">Sponsored</div>
+        <div class="ad-title" data-i18n="ad_title_1">Advertisement 1</div>
+        <div class="ad-sub" data-i18n="ad_sub_1">Boost your learning with tailored lessons.</div>
+      </div>
+        <div class="ad-actions"><button class="ad-cta small-btn" data-i18n="jump_btn">Перейти</button></div>
+    </a>
+
+    <a href="#" class="ad-banner" data-ad="2" aria-label="Advertisement 2">
+      <div class="ad-media" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#fff7ed"/><path d="M7 8h10" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 12h6" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ad-info">
+        <div class="ad-sponsored" data-i18n="ad_sponsored">Sponsored</div>
+        <div class="ad-title" data-i18n="ad_title_2">Advertisement 2</div>
+        <div class="ad-sub" data-i18n="ad_sub_2">Try a free week of Pro features.</div>
+      </div>
+      <div class="ad-actions"><button class="ad-cta small-btn" data-i18n="ad_cta_try">Try</button></div>
+    </a>
+
+    <a href="#" class="ad-banner" data-ad="3" aria-label="Advertisement 3">
+      <div class="ad-media" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#ecfdf5"/><path d="M8 9h8" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 13h4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ad-info">
+        <div class="ad-sponsored" data-i18n="ad_sponsored">Sponsored</div>
+        <div class="ad-title" data-i18n="ad_title_3">Advertisement 3</div>
+        <div class="ad-sub" data-i18n="ad_sub_3">Sign up and get personalized quizzes.</div>
+      </div>
+      <div class="ad-actions"><button class="ad-cta small-btn" data-i18n="ad_cta_signup">Sign up</button></div>
+    </a>
+  </div>
+</section>
+
+<!-- notes: места для рекламы/партнёров/описания премиума - оставить для дизайна -->
+
+<script src="i18n.js"></script>
+<script src="auth.js"></script>
+<!-- auth-ui removed: registration/login lives on profile page -->
+<script src="scypt.js"></script>
+<script src="search.js"></script>
+<script src="./animated-bg.js"></script>
+<script src="ads.js"></script>
+</body>
+</html>

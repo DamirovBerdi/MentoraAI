@@ -1,0 +1,47 @@
+const darkModeCheckbox = document.getElementById('darkMode');
+const languageSelect = document.getElementById('language');
+const notificationsCheckbox = document.getElementById('notifications');
+
+// Load settings
+window.addEventListener('DOMContentLoaded', () => {
+  if(localStorage.getItem('darkMode') === 'on'){
+    document.body.classList.add('dark');
+    darkModeCheckbox.checked = true;
+  }
+
+  if(localStorage.getItem('language')){
+    languageSelect.value = localStorage.getItem('language');
+  }
+
+  if(localStorage.getItem('notifications') === 'on'){
+    notificationsCheckbox.checked = true;
+  }
+});
+
+// Dark Mode toggle
+darkModeCheckbox.addEventListener('change', () => {
+  if(darkModeCheckbox.checked){
+    document.body.classList.add('dark');
+    localStorage.setItem('darkMode', 'on');
+  } else {
+    document.body.classList.remove('dark');
+    localStorage.setItem('darkMode', 'off');
+  }
+});
+
+// Language select
+languageSelect.addEventListener('change', () => {
+  localStorage.setItem('language', languageSelect.value);
+  if (window._i18n && typeof window._i18n.setLang === 'function') {
+    window._i18n.setLang(languageSelect.value);
+  }
+});
+
+// Notifications toggle
+notificationsCheckbox.addEventListener('change', () => {
+  if(notificationsCheckbox.checked){
+    localStorage.setItem('notifications', 'on');
+  } else {
+    localStorage.setItem('notifications', 'off');
+  }
+});

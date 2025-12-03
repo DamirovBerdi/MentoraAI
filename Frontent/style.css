@@ -1,0 +1,322 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f9fc;
+    text-align: center;
+  }
+
+/* Use border-box globally so paddings don't increase element width unexpectedly */
+*, *::before, *::after { box-sizing: border-box; }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 44px;
+    background: #007bff;
+    color: white;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 2px solid white;
+  }
+  
+  .nav-btn {
+    padding: 10px 18px;
+    margin-left: 12px;
+    border: none;
+    background-color: white;
+    color: #007bff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight:700;
+    font-size:15px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* prevent nav buttons from breaking into multiple lines and overlapping */
+  .nav-btn { white-space: nowrap; }
+
+  .nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Search Section */
+  .hero {
+    padding: 35px 20px;
+  }
+
+  .hero h1{
+    font-size: 44px;
+    margin: 8px 0 6px;
+    color: #0b1220;
+    font-weight: 700;
+  }
+
+  .hero p{ font-size:16px; margin:0 0 12px; }
+  
+  .search-box {
+    width: 60%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  /* Feature Buttons */
+  .sections-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  
+  .feature-box {
+    background: white;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 120px;
+    cursor: pointer;
+    font-size: 16px;
+    /* remove default link underline and keep text color from element */
+    text-decoration: none;
+    color: inherit;
+    /* make hover animation smooth */
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ensure link states don't add an underline */
+  .feature-box:link,
+  .feature-box:visited,
+  .feature-box:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* motion on hover */
+  .feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  }
+
+/* Plan cards */
+.plan-card{ width:220px; background:#fff; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(12,40,80,0.06); display:flex; flex-direction:column; align-items:center; gap:8px }
+.plan-card .plan-icon{ font-size:34px; }
+.plan-card .plan-title{ font-weight:700; font-size:18px }
+.plan-card .plan-sub{ color:#556; font-size:14px }
+.plan-card .plan-cta{ margin-top:6px }
+.plan-pro{ border:2px solid #ffd580 }
+.plan-premium{ border:2px solid #ffda7b; background: linear-gradient(180deg,#fffef8,#fffaf0) }
+
+.placeholder-banner{ width:300px; height:80px; background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02)); border-radius:10px; box-shadow:0 6px 18px rgba(12,40,80,0.03) }
+
+/* Advertisement banners */
+.ad-row{ display:flex; gap:16px; justify-content:flex-start; flex-wrap:wrap; align-items:flex-start }
+  .ad-banner{ position:relative; width:320px; height:90px; display:flex; align-items:center; gap:12px; padding:10px; text-decoration:none; color:#0b1220; background:linear-gradient(90deg,#fff,#f7fafc); box-shadow:0 8px 24px rgba(12,40,80,0.06); border:1px solid rgba(0,0,0,0.04); transition:transform .12s ease, box-shadow .12s ease; border-radius:12px; overflow:hidden }
+.ad-banner:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(12,40,80,0.12) }
+.ad-media{ width:56px; height:56px; display:flex; align-items:center; justify-content:center; flex:0 0 56px }
+.ad-info{ text-align:left; flex:1; min-width:120px }
+.ad-sponsored{ font-size:11px; color:#6b7280; margin-bottom:2px }
+.ad-title{ font-weight:700; font-size:15px }
+.ad-sub{ font-size:13px; color:#566674 }
+.ad-actions{ margin-left:8px }
+  .ad-cta{ background:#0b6df0; color:#fff; padding:9px 12px; border-radius:8px; border:0; cursor:pointer }
+.ad-cta:hover{ opacity:0.95 }
+.ad-close{ position:absolute; right:8px; top:6px; background:rgba(0,0,0,0.06); border:0; width:28px; height:28px; border-radius:50%; cursor:pointer; font-weight:700 }
+.ad-close:hover{ background:rgba(0,0,0,0.12) }
+.ad-banner .ad-content{ font-weight:700; color:#0b1220 }
+
+/* AI result banner */
+/* AI banner styles removed (reverted). */
+
+/* Smaller screens: stack banners */
+@media (max-width:880px){ .ad-banner{ width:100%; max-width:420px } .plan-card{ width:100%; max-width:420px } }
+
+@media (max-width:880px){ .ad-banner{ width:100%; max-width:420px } .plan-card{ width:100%; max-width:420px } }
+
+  
+  #progress-preview {
+    margin-top: 30px;
+  }
+  
+  .chart {
+    width: 65%;
+    border-radius: 8px;
+  }
+  
+  footer {
+    background: #003f80;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  /* Dark mode overrides (apply when <body> has class "dark") */
+  body.dark {
+    background: #0f1724;
+    color: #e6eef8;
+  }
+
+  body.dark header {
+    background: #0b1220;
+    color: #e6eef8;
+  }
+
+  body.dark .nav-btn {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 6px;
+    background-color: #1f2937;
+    color: #e6eef8;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  body.dark .profile-image {
+    border-color: #e6eef8;
+  }
+
+  body.dark .search-box {
+    background: #0f1b27;
+    color: #e6eef8;
+    border: 1px solid #233041;
+  }
+
+  body.dark .feature-box {
+    background: #0b1220;
+    color: #e6eef8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+
+  body.dark footer {
+    background: #001427;
+    color: #cfe8ff;
+  }
+
+  /* small styled link/button for "Forgot password?" on profile page */
+  .forgot-link {
+    background: white;
+    color: #0b61d8; /* blue text */
+    border: 2px solid #e63946; /* red outline */
+    padding: 6px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    font-weight: 600;
+  }
+  .forgot-link:hover { background:#fff6f7; }
+  .forgot-link:focus{ outline: none; box-shadow: 0 0 0 3px rgba(230,57,70,0.12); }
+
+/* History header nav tweaks */
+.history-nav{ display:flex; gap:10px; align-items:center; }
+.history-nav .nav-link{ background:#fff; color:#0b61d8; padding:8px 12px; border-radius:8px; text-decoration:none; box-shadow:0 3px 8px rgba(12,40,80,0.06); border:1px solid rgba(0,0,0,0.04); font-weight:600 }
+.history-nav .nav-link:hover{ transform:translateY(-2px); transition:transform .12s ease; }
+
+/* Games list tweaks */
+.game-row{ display:flex; flex-direction:column; gap:10px; }
+.game-item{ display:flex; justify-content:space-between; align-items:center; padding:10px; border-radius:10px; background:#fff; box-shadow:0 6px 18px rgba(12,40,80,0.04); border:1px solid rgba(20,20,40,0.03) }
+.game-item .meta{ font-size:13px; color:#566674 }
+.small-btn{
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  background:#fff;
+  cursor:pointer;
+  /* animation */
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+  will-change: transform, box-shadow;
+}
+
+.small-btn:hover{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(2,6,23,0.18);
+}
+
+.small-btn:active{
+  transform: translateY(0) scale(0.995);
+  box-shadow: 0 6px 12px rgba(2,6,23,0.12);
+}
+
+.small-btn:focus{ outline: none; box-shadow: 0 0 0 4px rgba(59,130,246,0.12); }
+
+  /* Password strength meter */
+  .pw-strength-wrap{ display:flex; align-items:center; gap:12px; margin-top:6px; }
+  .pw-strength{ width:160px; height:8px; background:#e6eef8; border-radius:6px; overflow:hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.04); }
+  .pw-strength > i{ display:block; height:100%; width:0%; background:linear-gradient(90deg,#ff6b6b,#ffb86b); transition:width .28s ease, background .28s ease; }
+  .pw-strength-label{ font-size:13px; color:#415365; min-width:76px; }
+  .pw-weak{ background:linear-gradient(90deg,#ff6b6b,#ff916b) !important; }
+  .pw-medium{ background:linear-gradient(90deg,#ffd166,#ffb86b) !important; }
+  .pw-strong{ background:linear-gradient(90deg,#9be7ff,#60a5fa) !important; }
+  .pw-verystrong{ background:linear-gradient(90deg,#86efac,#22c55e) !important; }
+  .pw-strength-label.weak{ color:#b91c1c; }
+  .pw-strength-label.medium{ color:#b45309; }
+  .pw-strength-label.strong{ color:#1e40af; }
+  .pw-strength-label.verystrong{ color:#166534; }
+/* Progress page styles */
+.progress-stats { background: #fff; box-shadow: 0 8px 20px rgba(12,40,80,0.04); border-radius: 12px; }
+.progress-stats .meta{ color:#6b7280; font-size:13px }
+.card{ background:#fff; border-radius:12px; padding:12px; box-shadow:0 6px 18px rgba(12,40,80,0.04); border:1px solid rgba(0,0,0,0.03) }
+.loading{ display:flex; gap:8px; align-items:center; justify-content:center; padding:18px }
+.spinner{ width:24px; height:24px; border-radius:50%; border:3px solid rgba(0,0,0,0.08); border-top-color:#007bff; animation:spin 1s linear infinite }
+@keyframes spin{ to{ transform:rotate(360deg) } }
+
+/* small adjustments for progress and game items */
+.game-row{ display:flex; flex-direction:column; gap:10px; }
+.game-item{ display:flex; justify-content:space-between; align-items:center; padding:12px; border-radius:10px; background:#fff; box-shadow:0 6px 18px rgba(12,40,80,0.04); border:1px solid rgba(20,20,40,0.03); cursor:pointer }
+.game-item:hover{ transform:translateY(-3px); transition:transform .15s ease }
+.meta{ font-size:13px; color:#566674 }
+
+/* Play modal styles */
+.modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,6,23,0.5); z-index:1200 }
+.modal-inner{ background:#fff; width:720px; max-width:95%; border-radius:12px; padding:16px; box-shadow:0 20px 60px rgba(2,6,23,0.4); position:relative; overflow:hidden }
+.modal-inner textarea{ font-size:15px; }
+.modal-inner .small-btn{ margin-left:6px }
+
+/* Ensure form controls inside modals don't overflow the rounded container */
+.modal-inner input,
+.modal-inner textarea,
+.modal-inner select,
+.modal-inner button{ max-width:100%; width:100%; box-sizing:border-box }
+
+/* Keep inline action buttons (like eye toggle) inside their container */
+.modal-inner .eye-toggle{ position:relative; display:inline-block }
+.modal-inner .eye-toggle button{ position:relative }
+.card { transition: transform .12s ease, box-shadow .12s ease }
+
+/* Floating action button (bottom-right) */
+.fab{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 10px 14px;
+  font-weight:700;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.2);
+  cursor: pointer;
+  z-index: 1200;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.fab:hover{ transform: translateY(-3px); box-shadow: 0 14px 32px rgba(2,6,23,0.24); }
+.fab:active{ transform: translateY(0); }
+
+@media (max-width:480px){
+  .fab{ right: 12px; bottom: 12px; padding: 8px 10px; font-size:14px; }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>History</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h2>Search History</h2>
+  <nav class="history-nav">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="profile.html">Profile</a>
+    <a class="nav-link" href="games.html">Games</a>
+  </nav>
+</header>
+<main>
+  <section id="history-section">
+    <p id="not-logged">You need to be logged in to see your search history.</p>
+    <div id="history-list" style="display:none">
+      <button id="clear-history">Clear History</button>
+      <ul id="history-items"></ul>
+    </div>
+  </section>
+</main>
+<script src="auth.js"></script>
+<script src="history.js"></script>
+</body>
+</html>
