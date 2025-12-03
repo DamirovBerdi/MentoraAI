@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MentoraAI (local demo)
 
 This repository contains a minimal demo of MentoraAI: an Express backend (`Backend/`) serving a static frontend (`Frontent/`).
@@ -50,3 +51,6 @@ Notes
 - The frontend folder is named `Frontent` (typo preserved) — server serves it as-is.
 
 If you want, I can: create the GitHub repo for you via `gh` (if you install & login), or walk you through the web UI steps for Render.
+=======
+# MentoraAI
+>>>>>>> 774d0c276f3844b9dd23ff6f564e218586751d93
